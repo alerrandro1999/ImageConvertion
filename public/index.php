@@ -1,10 +1,28 @@
 <?php
+// error_reporting(E_ALL);
+// ini_set("display_errors","Off");
 require __DIR__ . '/../vendor/autoload.php';
 
 use \App\File\ImageToText;
+
+if (isset($_FILES['image']) && !empty($_FILES['image'])) {
+
+    if ($_FILES['image']['type'] == 'video/mp4') {
+        $erro = '<div class="erro">
+                    <p>Apenas Imagens</p>
+                 </div>';
+    } else {
+        $obImageToText = new ImageToText($_FILES['image']['tmp_name']);
+        $text = $obImageToText->getText(100);
+        $textarea = '<div>
+                        <textarea name="" id="" cols="150" rows="30" style="width: 100%; height: 100%; font-family: monospace; text-align: center;">' . $text . '</textarea>
+                    </div>';
+    }
+}
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -18,44 +36,22 @@ use \App\File\ImageToText;
 </head>
 
 <body>
-    <header>
-        <div class="container-texto">
-            <h1>ImageConvertion</h1>
-            <h2>Convertar imagem para textos</h2>
-            <p>Nossa conversão e ilimitada, recomendamos imagens com uma cor mais cinza, imagens coloridas não ficam satisfatoria, cada pixel da imagem e mudado conforme a sua intensidade. Sendo os caracteres que compoem as imagens depois de convertidas '#', '=', '%', '*'. E um espaço em branco " ". </p>
-            <img src="imagem/git.png" alt="" width="80">
-            <img src="imagem/php.png" alt="" width="150">
-
-        </div>
-    </header>
     <main>
+        <div class="container-imagem">
+            <img src="imagem/git.png" alt="git hub" width="250">
+        </div>
+        <p>Preferencialmente imagens de tom cinza.</p>
         <div class="container-form">
             <form action="" method="post" enctype="multipart/form-data">
                 <div>
-                    <div>
-                        <label for="">Imagem:</label>
-                    </div>
-                    <input type="file" name="image">
+                    <input id="image" onsubmit="Checkfiles(this)" type="file" name="image" accept="image/*" required>
                 </div>
-
-                <div>
-                    <div>
-                        <label for="">Quantidade de linhas:</label>
-                    </div>
-                    <input type="number" name="width" value="100">
-                </div>
-
                 <button type="submit">Converter</button>
-
-                <div>
-                    <textarea name="" id="" cols="150" rows="30" style="width: 100%; height: 100%; font-family: monospace; text-align: center;"><?php
-                                                                                                                                                if (isset($_POST['width']) and isset($_FILES['image'])) {
-                                                                                                                                                    $obImageToText = new ImageToText($_FILES['image']['tmp_name']);
-                                                                                                                                                    echo $text = $obImageToText->getText($_POST['width']);
-                                                                                                                                                } ?></textarea>
-                </div>
+                <?= $textarea ?? ''  ?>
             </form>
         </div>
+        <?= $erro ?? '' ?>
+
     </main>
 </body>
 

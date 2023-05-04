@@ -5,45 +5,36 @@
     font-family: 'Roboto', sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    background: linear-gradient(99.32deg, #05303E 0.81%, #2EB1DA 102.45%);
-    color: #fff;
-    gap: 250px;
-}
-
 main {
-    padding: 50px;
+    padding: 20px;
+    background: linear-gradient(99.32deg, #05303E 0.81%, #2EB1DA 102.45%);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 15px;
 }
 
 input {
     margin: 10px 0;
 }
 
-p{
-    margin-bottom: 15px;
-}
-
-.container-texto h1 {
-    margin-bottom: 10px;
-}
-
-.container-texto h2 {
-    margin-bottom: 10px;
-}
-
-.container-texto p {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 1.2rem;
-}
-
 .container-form {
     display: flex;
     justify-content: left
+}
+
+button {
+    padding: 3px 28px;
+    border: 0;
+    cursor: pointer;
+    background: #022835;
+    color: #FFFFFF;
+}
+
+.erro{
+    background: red;
+    padding: 15px;
 }
