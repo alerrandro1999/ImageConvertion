@@ -1,6 +1,8 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteCond %{THE_REQUEST} public/([^\s?]*) [NC]
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/public/([^\s]+) [NC]
 RewriteRule ^ %1 [L,NE,R=302]
-RewriteRule ^((?!public/).*)$ https://imageconverterascii.online/public/$1 [L,NC]
