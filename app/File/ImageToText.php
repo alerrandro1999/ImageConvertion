@@ -11,7 +11,7 @@ class ImageToText
         '*',
         ' '
     ];
-    
+
     private $image;
 
     private $width;
@@ -21,9 +21,7 @@ class ImageToText
     public function __construct($file)
     {
         $this->image = imagecreatefromstring(file_get_contents($file));
-
         list($this->width, $this->height) = getimagesize($file);
-
         $this->setGrayScale();
     }
 
@@ -59,7 +57,8 @@ class ImageToText
         return trim($text, PHP_EOL);
     }
 
-    private function getPixelColor($image, $x, $y){
+    private function getPixelColor($image, $x, $y)
+    {
 
         $index = imagecolorat($image, $x, $y);
 
