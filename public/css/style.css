@@ -23,7 +23,8 @@ input {
 
 .container-form {
     display: flex;
-    justify-content: left
+    flex-direction: column;
+    gap: 15px;
 }
 
 button {
@@ -34,7 +35,19 @@ button {
     color: #FFFFFF;
 }
 
-.erro{
+.erro {
     background: red;
     padding: 15px;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.container-input {
+    display: flex;
+    justify-content: center;
 }
