@@ -3,4 +3,4 @@ RewriteBase /
 
 RewriteCond %{THE_REQUEST} public/([^\s?]*) [NC]
 RewriteRule ^ %1 [L,NE,R=302]
-RewriteRule ^((?!public/).*)$ transforma-texto-imagem/public/$1 [L,NC]
+RewriteRule ^((?!public/).*)$ imageconverterascii.online/public/$1 [L,NC]
