@@ -32,7 +32,13 @@ if (isset($_FILES['image']) && !empty($_FILES['image'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap" rel="stylesheet">
-    <title>ImageConvertion</title>
+    <link rel="icon" type="image/png" href="imagem/ascii.png"/>
+    <meta name="author" content="Alerrandro Borges de Almeida">
+    <meta name="description" content="site para converter imagens para ascii">
+    <meta name="keywords" content="imagens, conversor, ascii, arte ASCII, arte de texto">
+    <meta name="copyright" content="© 2023 Alerrandro Borges de Almeida" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1251593574340280" crossorigin="anonymous"></script>
+    <title>Image Converter</title>
 </head>
 
 <body>
