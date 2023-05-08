@@ -47,6 +47,7 @@ if (isset($_FILES['image']) && !empty($_FILES['image'])) {
         <div class="container-imagem">
             <img src="imagem/git.png" alt="git hub" width="250">
         </div>
+        <p>Se você está procurando uma maneira de transformar suas imagens favoritas em algo novo e único, você veio ao lugar certo. Com nossa ferramenta, você pode converter qualquer imagem em uma obra de arte ASCII impressionante em apenas alguns cliques.</p>
         <p>Preferencialmente imagens de tom cinza.</p>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="container-form">
